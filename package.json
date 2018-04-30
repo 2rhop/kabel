@@ -5,8 +5,8 @@
   "main": "_server/server",
   "scripts": {
     "babel":"./node_modules/.bin/babel-node",
-    "env": "babel-node init",
-    "server": "./node_modules/.bin/nodemon --ignore node_modules/ --exec babel-node .",
+    "env": "npm run babel init.js",
+    "server": "./node_modules/.bin/nodemon --ignore node_modules/ --exec npm run babel .",
     "init": "npm run env && npm run server",
     "migration": "npm run babel ./node_modules/knex/bin/cli.js migrate:make",
     "migrate": "npm run babel ./node_modules/knex/bin/cli.js migrate:latest",
