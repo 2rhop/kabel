@@ -1,0 +1,32 @@
+{
+  "name": "kabeljs",
+  "version": "1.0.0",
+  "description": "API REST framework built in javascript",
+  "main": "_server/server",
+  "scripts": {
+    "babel":"./node_modules/.bin/babel-node",
+    "env": "babel-node init",
+    "server": "./node_modules/.bin/nodemon --ignore node_modules/ --exec babel-node .",
+    "init": "npm run env && npm run server",
+    "migration": "npm run babel ./node_modules/knex/bin/cli.js migrate:make",
+    "migrate": "npm run babel ./node_modules/knex/bin/cli.js migrate:latest",
+    "seed": "npm run babel ./node_modules/knex/bin/cli.js seed:make",
+    "seeding": "npm run babel ./node_modules/knex/bin/cli.js seed:run",
+    "populate":"npm run babel ./utils/populate_db"
+  },
+  "author": "2rhop",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.3",
+	  "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
